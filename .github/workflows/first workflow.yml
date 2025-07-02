@@ -1,0 +1,17 @@
+name: first workflow
+
+on: push
+
+jobs:
+ echo-ubuntu-runner:
+  runs-on: ubuntu-latest
+  steps:
+    - name: checkout code
+      uses: actions/checkout@v4.2.2
+    - name: setup java jdk
+      uses: actions/setup-java@3.14.1
+      with:
+           java-version: '17'
+           distribution: 'microsoft'
+    - name: check java installed
+      run: echo java --version
